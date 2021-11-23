@@ -1661,7 +1661,7 @@ router.get('/kuis/tebakkata', async (req, res, next) => {
         var Apikey = req.query.apikey
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-       fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/tebakkata.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Rizxyu/Database-1/main/tebakkata.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1682,7 +1682,7 @@ router.get('/kuis/asahotak', async (req, res, next) => {
         var Apikey = req.query.apikey
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-       fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/asahotak.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Rizxyu/Database-1/main/asahotak.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1703,7 +1703,7 @@ router.get('/kuis/susunkata', async (req, res, next) => {
         var Apikey = req.query.apikey
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-       fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/susunkata.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/Rizxyu/Database-1/main/susunkata.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1747,6 +1747,173 @@ router.get('/kuis/tebakgambar', async (req, res, next) => {
   }
 })
 
+router.get('/kuis/siapakahaku', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/Rizxyu/Database-1/main/siapakahaku.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
+router.get('/kuis/tebaklirik', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/Rizxyu/Database-1/main/tebaklirik.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
+router.get('/kuis/tebakkalimat', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/Rizxyu/Database-1/main/tebakkalimat.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
+router.get('/kuis/tebaktebakan', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/Rizxyu/Database-1/main/tebaktebakan.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
+router.get('/kuis/tebakjenaka', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/Rizxyu/Database-1/main/tebakjenaka.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
+router.get('/kuis/tebakbendera', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/Rizxyu/Database-1/main/tebakbendera.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
+router.get('/kuis/tebakkimia', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/Rizxyu/Database-1/main/tebakkimia.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
+router.get('/kuis/tebakchara', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/Rizxyu/Database-1/main/tebakchara.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
 /**
 * @Maker
 **/
