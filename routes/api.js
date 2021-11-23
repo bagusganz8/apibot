@@ -2972,6 +2972,27 @@ res.json(loghandler.invalidKey)
 }
 })
 
+router.get('/random/lolivideo', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/asupanloli.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
 router.get('/cekapikey', async(req, res, next) => {
   const apikey = req.query.apikey;
   if(!apikey) return res.json(loghandler.notparam)
