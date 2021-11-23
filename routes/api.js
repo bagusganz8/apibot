@@ -1664,7 +1664,6 @@ router.get('/kuis/tebakkata', async (req, res, next) => {
        fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/tebakkata.json`))
         .then(response => response.json())
         .then(data => {
-        var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
                  result
