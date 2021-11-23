@@ -1657,6 +1657,25 @@ res.json(loghandler.invalidKey)
 }
 })
 
+router.get('/kuis/tebakkata', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/tebakkata.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
 
 router.get('/kuis/tebakgambar', async (req, res, next) => {
   var apikey = req.query.apikey;
