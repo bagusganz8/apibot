@@ -1708,7 +1708,8 @@ router.get('/kuis/susunkata', async (req, res, next) => {
         .then(data => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
-             res.json(result)
+             res.json({
+                 result
              })
          })
          .catch(e => {
