@@ -2747,7 +2747,7 @@ router.get('/cekapikey', async(req, res, next) => {
   if(!apikey) return res.json(loghandler.notparam)
   if(listkey.includes(apikey)) {
     res.json({
-      status: 'active',
+      status: 'active', 
       creator: `${creator}`,
       apikey: `${apikey}`,
       message: 'APIKEY ACTIVE'
