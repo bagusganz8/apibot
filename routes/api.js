@@ -2784,7 +2784,7 @@ router.get('/web2plain-text', async(req, res, next) => {
   }
 });
 
-router.get('/kuis/couple', async (req, res, next) => {
+router.get('/random/couple', async (req, res, next) => {
         var Apikey = req.query.apikey
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
