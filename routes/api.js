@@ -8,7 +8,7 @@ var zahirr = db.get("zahirr");
 	console.log('')  
 }
  
-var creator = "@only_fxc7"
+var creator = "@bagusgans"
 var secure = require('ssl-express-www');
 var cors = require('cors');
 var fetch = require('node-fetch');
@@ -165,7 +165,7 @@ loghandler = {
     error: {
         status: false,
         creator: `${creator}`,
-        message: 'emror bruh'
+        message: 'error tod'
     }
 }
 
@@ -175,7 +175,7 @@ Akhir Pesan Error
 
 router.use(favicon(__path + "/views/favicon.ico"));
 
-const listkey = ["bagusgans", "manogay"];
+const listkey = ["bagusgans", "1bulankey"];
 
 router.post("/apikey", async (req, res, next) => {
   const key = req.query.key;
@@ -1657,8 +1657,64 @@ res.json(loghandler.invalidKey)
 }
 })
 
+router.get('/kuis/asahotak', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
 
-router.get('/kuis/tebakGambar', async (req, res, next) => {
+       fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/asahotak.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/kuis/susunkata', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+
+       fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/susunkata.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/kuis/tebakata', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+
+       fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/tebakkata.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/kuis/tebakgambar', async (req, res, next) => {
   var apikey = req.query.apikey;
   
   if(!apikey) return res.json(loghandler.notparam)
@@ -2133,18 +2189,18 @@ router.get('/textpro/firework', async(req, res, next) => {
   }
 });
 
-router.get('/textpro/thunder', async(req, res, next) => {
+router.get('/textpro/black-pink', async(req, res, next) => {
 
   const apikey = req.query.apikey;
 
-  const text = req.query.text;;
+  const text = req.query.text;
   
   if(!apikey) return res.json(loghandler.notparam)
   if(!text) return res.json(loghandler.nottext)
   
   if(listkey.includes(apikey)){
     zrapi 
-  .textpro("https://textpro.me/thunder-text-effect-online-881.html", [
+  .textpro("https://textpro.me/create-blackpink-logo-style-online-1001.html", [
     text,
   ])
   .then((data) => {
@@ -2161,7 +2217,7 @@ router.get('/textpro/thunder', async(req, res, next) => {
   }
 });
 
-router.get('/textpro/black-pink', async(req, res, next) => {
+router.get('/textpro/joker-logo', async(req, res, next) => {
 
   const apikey = req.query.apikey;
 
@@ -2172,7 +2228,7 @@ router.get('/textpro/black-pink', async(req, res, next) => {
   
   if(listkey.includes(apikey)){
     zrapi 
-  .textpro("https://textpro.me/create-blackpink-logo-style-online-1001.html", [
+  .textpro("https://textpro.me/create-logo-joker-online-934.html", [
     text,
   ])
   .then((data) => {
@@ -2273,7 +2329,7 @@ router.get('/textpro/greenhorror', async(req, res, next) => {
   }
 });
 
-router.get('/textpro/tonder', async(req, res, next) => {
+router.get('/textpro/thunder', async(req, res, next) => {
 
   const apikey = req.query.apikey;
 
