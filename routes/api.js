@@ -1664,6 +1664,49 @@ router.get('/kuis/tebakkata', async (req, res, next) => {
        fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/tebakkata.json`))
         .then(response => response.json())
         .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
+router.get('/kuis/asahotak', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/asahotak.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
+
+router.get('/kuis/susunkata', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/susunkata.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
                  result
@@ -2741,13 +2784,33 @@ router.get('/web2plain-text', async(req, res, next) => {
   }
 });
 
+router.get('/kuis/couple', async (req, res, next) => {
+        var Apikey = req.query.apikey
+	if(!Apikey) return res.json(loghandler.notparam)
+	if(listkey.includes(Apikey)){
+       fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/couple.json`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+        var result = data[Math.floor(Math.random() * data.length)];
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+} else {
+res.json(loghandler.invalidKey)
+}
+})
 
 router.get('/cekapikey', async(req, res, next) => {
   const apikey = req.query.apikey;
   if(!apikey) return res.json(loghandler.notparam)
   if(listkey.includes(apikey)) {
     res.json({
-      status: 'active', 
+      status: 'active',
       creator: `${creator}`,
       apikey: `${apikey}`,
       message: 'APIKEY ACTIVE'
