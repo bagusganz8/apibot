@@ -1723,7 +1723,7 @@ router.get('/kuis/family100', async (req, res, next) => {
         var Apikey = req.query.apikey
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-       fetch(encodeURI(`https://raw.githubusercontent.com/Ghost19-ui/family100/main/family.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
