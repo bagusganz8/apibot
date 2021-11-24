@@ -239,7 +239,7 @@ router.get('/music/spotify', async(req, res, next) => {
         var result = hasil.data;
              res.json({
                  status : true,
-                 
+                 creator : `${creator}`,
                  result
              })
          })
@@ -413,7 +413,7 @@ router.get('/download/fb', async (req, res, next) => {
             
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-    if (!url) return res.json({ status : false,  message : "masukan parameter url"})
+    if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
 
        FB(url)
        .then((data) => {
@@ -446,14 +446,14 @@ router.get('/stalk/tiktok', async (req, res, next) => {
         .then(user => {
             res.json({
                 status : true,
-                
+                creator : `${creator}`,
                 result : user
             })
         })
         .catch(e => {
              res.json({
                  status : false,
-                 
+                 creator : `${creator}`,
                  message : "error, mungkin username anda tidak valid"
              })
          })
@@ -473,7 +473,7 @@ router.get('/stalk/ig', async(req, res, next) => {
       res.json({
         status : true,
         code: 200,
-        
+        creator : `${creator}`,
         result
       });
     })
@@ -492,7 +492,7 @@ router.get('/stalk/npm', async (req, res, next) => {
             
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-    if (!query) return res.json({ status : false,  message : "masukan parameter query"})
+    if (!query) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter query"})
 
        fetch(encodeURI(`https://registry.npmjs.org/${query}`))
         .then(response => response.json())
@@ -500,7 +500,7 @@ router.get('/stalk/npm', async (req, res, next) => {
         var result = data;
              res.json({
                  status : true,
-                 
+                 creator : `${creator}`,
                  result
              })
          })
@@ -524,7 +524,7 @@ router.get('/random/quotes', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 
+                 creator : `${creator}`,
                  result
              })
          })
@@ -590,7 +590,7 @@ router.get('/short/tinyurl', async (req, res, next) => {
          try {
              res.json({
                  status : true,
-                 
+                 creator : `${creator}`,
                  result : `${body}`
              })
          } catch (e) {
@@ -744,8 +744,8 @@ router.get('/muslim/hadits', async (req, res, next) => {
             nomor = req.query.nomor
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-    if (!kitab) return res.json({ status : false,  message : "masukan parameter kitab"})
-    if (!nomor) return res.json({ status : false,  message : "masukan parameter nomor"})
+    if (!kitab) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kitab"})
+    if (!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
 
        fetch(encodeURI(`https://hadits-api-zhirrr.vercel.app/books/${kitab}/${nomor}`))
         .then(response => response.json())
@@ -770,8 +770,8 @@ router.get('/muslim/quran', async (req, res, next) => {
             
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-    if (!surah) return res.json({ status : false,  message : "masukan parameter surah"})
-    if (!ayat) return res.json({ status : false,  message : "masukan parameter ayat"})
+    if (!surah) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter surah"})
+    if (!ayat) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter ayat"})
 
        fetch(encodeURI(`https://alquran-apiii.vercel.app/surah/${surah}/${ayat}`))
         .then(response => response.json())
@@ -1083,7 +1083,7 @@ router.get('/muslim/jadwalshalat', async (req, res, next) => {
             
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-        if(!kota) return res.json({ status : false,  message : "masukan parameter kota"})
+        if(!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
 
        fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/Zhirrr-Database/main/adzan/${kota}/2021/03.json`))
         .then(response => response.json())
@@ -1273,7 +1273,7 @@ router.get('/info/wikipedia', async (req, res, next) => {
             
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-        if(!search) return res.json({ status : false,  message : "masukan parameter search"})
+        if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/wiki?keyword=${search}`))
         .then(response => response.json())
@@ -1298,7 +1298,7 @@ router.get('/info/drakorasia', async (req, res, next) => {
             
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-        if(!search) return res.json({ status : false,  message : "masukan parameter search"})
+        if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
        fetch(encodeURI(`http://docs-api-zahirrr.herokuapp.com/api/drakorasia?search=${search}`))
         .then(response => response.json())
@@ -1322,7 +1322,7 @@ router.get('/fakedata', async (req, res, next) => {
             
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-        if(!country) return res.json({ status : false,  message : "masukan parameter country"})
+        if(!country) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter country"})
 
        fetch(encodeURI(`https://fakename-api-zhirrr.vercel.app/api/fakename?country=${country}`))
         .then(response => response.json())
@@ -1347,7 +1347,7 @@ router.get('/hilih', async (req, res, next) => {
             
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-        if(!kata) return res.json({ status : false,  message : "masukan parameter kata"})
+        if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        fetch(encodeURI(`https://hilih-api-zhirrr.vercel.app/api/hilih?kata=${kata}`))
         .then(response => response.json())
@@ -1394,7 +1394,7 @@ router.get('/music/chordlagu', async (req, res, next) => {
             
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-        if(!lagu) return res.json({ status : false,  message : "masukan parameter kata"})
+        if(!lagu) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/chord?q=${lagu}`))
         .then(response => response.json())
@@ -1419,7 +1419,7 @@ router.get('/info/kbbi', async (req, res, next) => {
             
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-        if(!kata) return res.json({ status : false,  message : "masukan parameter kata"})
+        if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
 
        fetch(encodeURI(`https://kbbi-api-zhirrr.vercel.app/api/kbbi?text=${kata}`))
         .then(response => response.json())
@@ -1512,7 +1512,7 @@ router.get('/info/kodepos', async (req, res, next) => {
             
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-	if(!kota) return res.json({ status : false,  message : "masukan parameter kota"})
+	if(!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
 
        fetch(encodeURI(`https://kodepos-api-zhirrr.vercel.app/?q=${kota}`))
         .then(response => response.json())
@@ -1537,7 +1537,7 @@ router.get('/translate', async (req, res, next) => {
             
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-	if(!kata) return res.json({ status : false,  message : "masukan parameter kata"})
+	if(!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/translate?text=${kata}`))
         .then(response => response.json())
         .then(data => {
@@ -1561,7 +1561,7 @@ router.get('/anime/kusonime', async (req, res, next) => {
             
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-	if(!search) return res.json({ status : false,  message : "masukan parameter search"})
+	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/kusonime?search=${search}`))
         .then(response => response.json())
         .then(data => {
@@ -1619,7 +1619,7 @@ router.get('/anime/manga', async (req, res, next) => {
             
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-	if(!search) return res.json({ status : false,  message : "masukan parameter search"})
+	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
        fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/manga?keyword=${search}`))
         .then(response => response.json())
         .then(data => {
@@ -3272,7 +3272,7 @@ router.get('/nsfw/ass', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3293,7 +3293,7 @@ router.get('/nsfw/ahegao', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3314,7 +3314,7 @@ router.get('/nsfw/bdsm', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3335,7 +3335,7 @@ router.get('/nsfw/blowjob', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3356,7 +3356,7 @@ router.get('/nsfw/cuckold', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3377,7 +3377,7 @@ router.get('/nsfw/cum', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3398,7 +3398,7 @@ router.get('/nsfw/ero', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3419,7 +3419,7 @@ router.get('/nsfw/femdom', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3440,7 +3440,7 @@ router.get('/nsfw/foot', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3461,7 +3461,7 @@ router.get('/nsfw/gangbang', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3482,7 +3482,7 @@ router.get('/nsfw/glasses', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3503,7 +3503,7 @@ router.get('/nsfw/hentai', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3524,7 +3524,7 @@ router.get('/nsfw/hentaigif', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3545,7 +3545,7 @@ router.get('/nsfw/jahy', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3566,7 +3566,7 @@ router.get('/nsfw/masturbation', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3587,7 +3587,7 @@ router.get('/nsfw/neko', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3608,7 +3608,7 @@ router.get('/nsfw/orgy', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3629,7 +3629,7 @@ router.get('/nsfw/panties', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3650,7 +3650,7 @@ router.get('/nsfw/pussy', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3671,7 +3671,7 @@ router.get('/nsfw/thighs', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
@@ -3692,7 +3692,7 @@ router.get('/nsfw/yuri', async (req, res, next) => {
         var result = data;
         var result = data[Math.floor(Math.random() * data.length)];
              res.json({
-             	
+             	creator : `${creator}`,
                  result
              })
          })
