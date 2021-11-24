@@ -3279,7 +3279,6 @@ router.get('/nsfw/ass', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-})
 
 router.get('/nsfw/ahegao', async (req, res, next) => {
         var apikeyInput = req.query.apikey
@@ -3299,7 +3298,6 @@ router.get('/nsfw/ahegao', async (req, res, next) => {
          })
          .catch(e => {
          	res.json(loghandler.error)
-})
 })
 
 router.get('/nsfw/bdsm', async (req, res, next) => {
@@ -3321,7 +3319,6 @@ router.get('/nsfw/bdsm', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-})
 
 router.get('/nsfw/blowjob', async (req, res, next) => {
         var apikeyInput = req.query.apikey
@@ -3341,7 +3338,6 @@ router.get('/nsfw/blowjob', async (req, res, next) => {
          })
          .catch(e => {
          	res.json(loghandler.error)
-})
 })
 
 router.get('/nsfw/cuckold', async (req, res, next) => {
@@ -3363,7 +3359,6 @@ router.get('/nsfw/cuckold', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-})
 
 router.get('/nsfw/cum', async (req, res, next) => {
         var apikeyInput = req.query.apikey
@@ -3383,7 +3378,6 @@ router.get('/nsfw/cum', async (req, res, next) => {
          })
          .catch(e => {
          	res.json(loghandler.error)
-})
 })
 
 router.get('/nsfw/ero', async (req, res, next) => {
@@ -3405,7 +3399,6 @@ router.get('/nsfw/ero', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-})
 
 router.get('/nsfw/femdom', async (req, res, next) => {
         var apikeyInput = req.query.apikey
@@ -3425,7 +3418,6 @@ router.get('/nsfw/femdom', async (req, res, next) => {
          })
          .catch(e => {
          	res.json(loghandler.error)
-})
 })
 
 router.get('/nsfw/foot', async (req, res, next) => {
@@ -3447,7 +3439,6 @@ router.get('/nsfw/foot', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-})
 
 router.get('/nsfw/gangbang', async (req, res, next) => {
         var apikeyInput = req.query.apikey
@@ -3467,7 +3458,6 @@ router.get('/nsfw/gangbang', async (req, res, next) => {
          })
          .catch(e => {
          	res.json(loghandler.error)
-})
 })
 
 router.get('/nsfw/glasses', async (req, res, next) => {
@@ -3489,7 +3479,6 @@ router.get('/nsfw/glasses', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-})
 
 router.get('/nsfw/hentai', async (req, res, next) => {
         var apikeyInput = req.query.apikey
@@ -3509,7 +3498,6 @@ router.get('/nsfw/hentai', async (req, res, next) => {
          })
          .catch(e => {
          	res.json(loghandler.error)
-})
 })
 
 router.get('/nsfw/hentaigif', async (req, res, next) => {
@@ -3531,7 +3519,6 @@ router.get('/nsfw/hentaigif', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-})
 
 router.get('/nsfw/jahy', async (req, res, next) => {
         var apikeyInput = req.query.apikey
@@ -3551,7 +3538,6 @@ router.get('/nsfw/jahy', async (req, res, next) => {
          })
          .catch(e => {
          	res.json(loghandler.error)
-})
 })
 
 router.get('/nsfw/masturbation', async (req, res, next) => {
@@ -3573,7 +3559,6 @@ router.get('/nsfw/masturbation', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-})
 
 router.get('/nsfw/neko', async (req, res, next) => {
         var apikeyInput = req.query.apikey
@@ -3593,7 +3578,6 @@ router.get('/nsfw/neko', async (req, res, next) => {
          })
          .catch(e => {
          	res.json(loghandler.error)
-})
 })
 
 router.get('/nsfw/orgy', async (req, res, next) => {
@@ -3615,7 +3599,6 @@ router.get('/nsfw/orgy', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-})
 
 router.get('/nsfw/panties', async (req, res, next) => {
         var apikeyInput = req.query.apikey
@@ -3635,7 +3618,6 @@ router.get('/nsfw/panties', async (req, res, next) => {
          })
          .catch(e => {
          	res.json(loghandler.error)
-})
 })
 
 router.get('/nsfw/pussy', async (req, res, next) => {
@@ -3657,7 +3639,6 @@ router.get('/nsfw/pussy', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-})
 
 router.get('/nsfw/thighs', async (req, res, next) => {
         var apikeyInput = req.query.apikey
@@ -3678,7 +3659,6 @@ router.get('/nsfw/thighs', async (req, res, next) => {
          .catch(e => {
          	res.json(loghandler.error)
 })
-})
 
 router.get('/nsfw/yuri', async (req, res, next) => {
         var apikeyInput = req.query.apikey
@@ -3698,7 +3678,6 @@ router.get('/nsfw/yuri', async (req, res, next) => {
          })
          .catch(e => {
          	res.json(loghandler.error)
-})
 })
 
 router.use(function (req, res) {
