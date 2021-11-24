@@ -2830,24 +2830,6 @@ router.get("/maker/nulis", async (req, res, next) => {
   }
 })
 
-router.get("/maker/ttp-", async (req, res, next) => {
-  
-  apikey = req.query.apikey;
-  text = req.query.text;
-  
-  if(!text) return res.json(loghandler.nottext)
-  if(!apikey) return res.json(loghandler.notparam)
-  
-  if(listkey.includes(apikey)) {
-    let hasil = 'https://api.xteam.xyz/ttp?file&text='+ text +' 
-    data = await fetch(hasil).then(v => v.buffer())
-    await fs.writeFileSync(__path +'/tmp/ttp.jpeg', data)
-    res.sendFile(__path +'/tmp/ttp.jpeg')
-  } else {
-    res.json(loghandler.invalidKey)
-  }
-})
-
 router.get('/maker/ttp', async (req, res, next) => {
 
   apikey = req.query.apikey;
@@ -2859,7 +2841,7 @@ data = await fetch(`https://api.xteam.xyz/ttp?file&text=${encodeURIComponent(req
          base64 = data.base64
          var buffer = base64.slice(22)
          await fs.writeFileSync(__path +`/tmp/ttp.webp`, buffer, 'base64')
-        res.sendFile(__path+'/tmp/ttp.webp')
+        res.sendFile(__path+'/tmp/ttp.jpeg')
   } else {
     res.json(loghandler.invalidKey)
   }
