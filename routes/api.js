@@ -1894,11 +1894,11 @@ res.json(loghandler.invalidKey)
 }
 })
 
-router.get('/kuis/tebakchara', async (req, res, next) => {
+router.get('/kuis/tebakanime', async (req, res, next) => {
         var Apikey = req.query.apikey
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-       fetch(encodeURI(`https://raw.githubusercontent.com/Rizxyu/Database-1/main/tebakchara.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/bagusganz8/BagusBot-Api/main/tebakchara.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -3840,7 +3840,7 @@ router.get('/random/wallpaper', async (req, res, next) => {
         var Apikey = req.query.apikey
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-       fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/wallpaper.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/bagusganz8/BagusBot-Api/main/Random/wallpaper.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
