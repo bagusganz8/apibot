@@ -1682,7 +1682,7 @@ router.get('/kuis/asahotak', async (req, res, next) => {
         var Apikey = req.query.apikey
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-       fetch(encodeURI(`https://raw.githubusercontent.com/Rizxyu/Database-1/main/asahotak.json`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/asahotak.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
