@@ -1641,7 +1641,7 @@ router.get('/kuis/caklontong', async (req, res, next) => {
         var Apikey = req.query.apikey
 	if(!Apikey) return res.json(loghandler.notparam)
 	if(listkey.includes(Apikey)){
-       fetch(encodeURI(`https://docs-api-zahirrr.herokuapp.com/api/quote?type=caklontong`))
+       fetch(encodeURI(`https://raw.githubusercontent.com/MFarelS/txt-1/main/caklontong.json`))
         .then(response => response.json())
         .then(data => {
         var result = data;
